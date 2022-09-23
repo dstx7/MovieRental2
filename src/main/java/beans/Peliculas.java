@@ -2,7 +2,7 @@
 package beans;
 
 
-public class Pelicula {
+public class Peliculas {
     
     private int id;
     private String titulo;
@@ -11,7 +11,7 @@ public class Pelicula {
     private int copias;
     private boolean novedad;
 
-    public Pelicula(int id, String titulo, String genero, String autor, int copias, boolean novedad) {
+    public Peliculas(int id, String titulo, String genero, String autor, int copias, boolean novedad) {
         this.id = id;
         this.titulo = titulo;
         this.genero = genero;

@@ -1,6 +1,6 @@
 package test;
 
-import beans.Pelicula;
+import beans.Peliculas;
 import connection.DBConnection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -41,7 +41,7 @@ public class OperacionesBD {
                 int copias = rs.getInt("copias");
                 boolean novedad = rs.getBoolean("novedad");
 
-                Pelicula peliculas = new Pelicula(id, titulo, genero, autor, copias, novedad);
+                Peliculas peliculas = new Peliculas(id, titulo, genero, autor, copias, novedad);
                 System.out.println(peliculas.toString());
             }
 
