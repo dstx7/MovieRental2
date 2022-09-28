@@ -9,19 +9,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import controller.PeliculaController;
+import controller.UsuarioController;
 
 /**
- * Servlet implementation class ServletPeliculaAlquilar
+ * Servlet implementation class ServletUsuarioRestarDinero
  */
-@WebServlet("/ServletPeliculaAlquilar")
-public class ServletPeliculaAlquilar extends HttpServlet {
+@WebServlet("/ServletUsuarioRestarDinero")
+public class ServletUsuarioRestarDinero extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ServletPeliculaAlquilar() {
+    public ServletUsuarioRestarDinero() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,17 +31,16 @@ public class ServletPeliculaAlquilar extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
                 throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		PeliculaController pelicula = new PeliculaController();
+		UsuarioController usuario = new UsuarioController();
 		
-		int id = Integer.parseInt(request.getParameter("id"));
 		String username = request.getParameter("username");
+		double saldo = Double.parseDouble(request.getParameter("saldo"));
 		
-		String peliculaStr = pelicula.alquilar(id,username);
-		
+		String usuarioStr = usuario.restarDinero(username, saldo);
 		response.setContentType("text/html;charset=UTF-8");
+		
 		PrintWriter out = response.getWriter();
-		out.println(peliculaStr);
+		out.println(usuarioStr);
 		out.flush();
 		out.close();
 		
